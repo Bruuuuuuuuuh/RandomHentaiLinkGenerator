@@ -15,8 +15,10 @@ FOR LINUX:
 
 
 How to execute?
-      
-      .Open a terminal, and use the following commands:
+
+ON LINUX:
+
+.Open a terminal, and type the following commands:
 
       javac /path/to/openURLscript.java
       java /path/to/openURLscript.java.
