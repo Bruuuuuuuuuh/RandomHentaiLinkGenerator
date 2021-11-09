@@ -12,3 +12,11 @@ FOR LINUX:
       . Firefox.
 
       . Java installed. I don't know which java versions are supported, but I used 16 and 17
+
+
+How to execute?
+      
+      .Open a terminal, and use de following commands:
+
+      javac /path/to/openURLscript.java
+      java /path/to/openURLscript.java.
