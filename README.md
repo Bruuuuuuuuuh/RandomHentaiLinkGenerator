@@ -20,3 +20,9 @@ How to execute?
 
       javac /path/to/openURLscript.java
       java /path/to/openURLscript.java.
+
+
+Demonstration video:
+
+https://user-images.githubusercontent.com/93013194/140939020-5aea6fc9-fc98-4ace-adbc-10708570f9aa.mp4
+
