@@ -16,7 +16,7 @@ FOR LINUX:
 
 How to execute?
       
-      .Open a terminal, and use de following commands:
+      .Open a terminal, and use the following commands:
 
       javac /path/to/openURLscript.java
       java /path/to/openURLscript.java.
