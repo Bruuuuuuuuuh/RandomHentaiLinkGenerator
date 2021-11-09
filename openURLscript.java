@@ -39,7 +39,7 @@ public class openURLscript {
             }
         }else if(detectOS(prop).equals("Windows")){
             try{
-                String[] ss = {"C:/users/default/Downloads/Chrome.exe", "-e", choose(r)};
+                String[] ss = {"C:/users/default/Downloads/Chrome.exe", "-e", choose(r)}; //This is just a base for a future solution, at the moment it doesn't work on windows
                 Process proc2 = new ProcessBuilder(ss).start();
 
             }catch(IOException ioee){
