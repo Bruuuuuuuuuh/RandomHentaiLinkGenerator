@@ -1,10 +1,11 @@
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.net.URL;
 import java.net.URLConnection;
+import java.util.Properties;
 import java.util.Random;
 import java.util.logging.Logger;
-import java.net.URL;
-import java.util.Properties;
+import java.util.Scanner;
 
 public class openURLscript {
     public static final Logger log = Logger.getLogger(openURLscript.class.getName());
@@ -17,6 +18,8 @@ public class openURLscript {
     }
 
     public static int anonimo( Random r, Properties prop) throws IOException {
+        Scanner sx = new Scanner(System.in);
+
         if(detectOS(prop).equals("Linux")){
             try {
                 String[] s = {"/usr/bin/firefox", "--private", choose(r)};
@@ -26,9 +29,18 @@ public class openURLscript {
                     s[2] = choose(r);
                     ss = new StringBuilder().append(s[2]).toString();
                 }
+                System.out.println("Your link is: " + ss + " do you want to open it? [yes, no]");
 
-                final Process proc = new ProcessBuilder(s).start();
+                String yn = sx.next();
 
+                if(yn.equals("yes")) {
+                    final Process proc = new ProcessBuilder(s).start();
+
+                }else{
+                    System.out.println("Ok, exiting application");
+                    System.exit(0);
+
+                }
 
             } catch (IOException ioe) {
                 log.severe("Error while opening browser (by default, it's firefox) : " + ioe.getMessage());
@@ -39,13 +51,16 @@ public class openURLscript {
             }
         }else if(detectOS(prop).equals("Windows")){
             try{
-                String[] ss = {"C:/users/default/Downloads/Chrome.exe", "-e", choose(r)}; //This is just a base for a future solution, at the moment it doesn't work on windows
+                String[] ss = {"C:\\Program %Files %(x86)\\Microsoft\\Edge\\Application\\msedge.exe:", "--private", choose(r)};
                 Process proc2 = new ProcessBuilder(ss).start();
 
             }catch(IOException ioee){
 
             }
         }
+
+        sx.close();
+
         return 0;
     }
 
