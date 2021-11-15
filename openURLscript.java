@@ -49,14 +49,8 @@ public class openURLscript {
                 System.exit(0);
 
             }
-        }else if(detectOS(prop).equals("Windows")){
-            try{
-                String[] ss = {"C:\\Program %Files %(x86)\\Microsoft\\Edge\\Application\\msedge.exe:", "--private", choose(r)};
-                Process proc2 = new ProcessBuilder(ss).start();
-
-            }catch(IOException ioee){
-
-            }
+        }else if(detectOS(prop).equals("Windows 10")){
+            windowsExecute(r);
         }
 
         sx.close();
@@ -69,7 +63,7 @@ public class openURLscript {
         int b = r.nextInt(99);
         int c = r.nextInt(99);
 
-        String s = new StringBuilder().append("https://nhentai.net/g/").append(a).append(b).append(c).toString();
+        String s = new StringBuilder().append("nhentai.net/g/").append(a).append(b).append(c).toString();
 
 
         return s;
@@ -97,4 +91,16 @@ public class openURLscript {
         return osName;
     }
 
+    public static void windowsExecute(Random r){
+        String link = choose(r);
+        String twoPointsLink = new StringBuilder().append(":").append(link).toString();
+        String[] comando = {"\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\"", twoPointsLink, "-inprivate"}; //this should work
+
+        try {
+            Runtime.getRuntime().exec(comando);
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+    }
 }
