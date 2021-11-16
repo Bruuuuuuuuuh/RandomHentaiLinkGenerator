@@ -63,7 +63,7 @@ public class openURLscript {
         int b = r.nextInt(99);
         int c = r.nextInt(99);
 
-        String s = new StringBuilder().append("nhentai.net/g/").append(a).append(b).append(c).toString();
+        String s = new StringBuilder().append("https://nhentai.net/g/").append(a).append(b).append(c).toString();
 
 
         return s;
