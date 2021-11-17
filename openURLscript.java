@@ -94,7 +94,7 @@ public class openURLscript {
     public static void windowsExecute(Random r){
         String link = choose(r);
         String[] linkSplitted = link.split("https://"); 
-        String twoPointsLink = new StringBuilder().append(":").append(linkSplitted).toString();
+        String twoPointsLink = new StringBuilder().append(":").append(linkSplitted[1]).toString();
         String[] comando = {"\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\"", twoPointsLink, "-inprivate"}; //this should work
 
         try {
