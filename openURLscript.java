@@ -17,7 +17,7 @@ public class openURLscript {
         anonimo(r, prop);
     }
 
-    public static int anonimo( Random r, Properties prop) throws IOException {
+    public static int anonimo( Random r, Properties prop) {
         Scanner sx = new Scanner(System.in);
 
         if(detectOS(prop).equals("Linux")){
@@ -50,7 +50,14 @@ public class openURLscript {
 
             }
         }else if(detectOS(prop).equals("Windows 10")){
-            windowsExecute(r);
+//            windowsExecute(r);
+            try{
+                String[] ss = {"C:\\Program %Files %(x86)\\Microsoft\\Edge\\Application\\msedge.exe:", "--private", choose(r)};
+                Process proc2 = new ProcessBuilder(ss).start();
+
+            }catch(IOException ioee){
+
+            }
         }
 
         sx.close();
@@ -91,10 +98,11 @@ public class openURLscript {
         return osName;
     }
 
-    public static void windowsExecute(Random r){
+   public static void windowsExecute(Random r){
         String link = choose(r);
-        String[] linkSplitted = link.split("https://"); 
-        String twoPointsLink = new StringBuilder().append(":").append(linkSplitted[1]).toString();
+	    String[] splittedLink = link.split("https://");
+
+	    String twoPointsLink = new StringBuilder().append(":").append(splittedLink[1]).toString();
         String[] comando = {"\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\"", twoPointsLink, "-inprivate"}; //this should work
 
         try {
